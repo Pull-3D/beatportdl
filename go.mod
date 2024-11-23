@@ -1,4 +1,4 @@
-module unspok3n/beatportdl
+module Pull-3D/beatportdl
 
 go 1.22.5
 
