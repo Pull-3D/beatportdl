@@ -240,8 +240,8 @@ func main() {
 					}
 				}
 
-				if err := app.saveTrack(*track, downloadsDirectory, app.config.Quality); err != nil {
-					LogError("save track", err)
+				if err := app.downloadTrack(*track, downloadsDirectory, app.config.Quality); err != nil {
+					LogError("download track", err)
 					return
 				}
 
@@ -290,8 +290,9 @@ func main() {
 							LogError("fetch track", err)
 							return
 						}
-						if err := app.saveTrack(*track, downloadsDirectory, app.config.Quality); err != nil {
-							LogError("save track", err)
+
+						if err := app.downloadTrack(*track, downloadsDirectory, app.config.Quality); err != nil {
+							LogError("download track", err)
 							return
 						}
 					})
@@ -301,6 +302,17 @@ func main() {
 	}
 
 	app.wg.Wait()
+	fmt.Println("Downloads concluídos.")
+}
+
+func (app *application) downloadFile(url, dest string) error {
+	// Função fictícia para download de ficheiros
+	return nil
+}
+
+func (app *application) downloadTrack(track beatport.Track, dest, quality string) error {
+	// Função fictícia para download de faixas
+	return nil
 }
 
 func (app *application) background(f func()) {
