@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-	"unspok3n/beatportdl/config"
-	"unspok3n/beatportdl/internal/beatport"
+	"Pull-3D/beatportdl/config"
+	"Pull-3D/beatportdl/internal/beatport"
 )
 
 const (
